@@ -17,7 +17,7 @@
 
 	System.out.println("future done? " + future.isDone());
 	System.out.println("result = "+integer);
-future.get()方法会锁住当前线程并且等待返回result后再执行。
+future.get()方法会**锁住**当前线程并且等待返回result后再执行。
 executorService用完应该关闭shutdown(),便于资源的回收利用。
 
 
@@ -35,7 +35,7 @@ executorService用完应该关闭shutdown(),便于资源的回收利用。
 	    }
 	}
 
-普通的读写锁，如果写锁没有释放，那么是读取不到map中的值的。原因是写操作是原子性的，但读操作并不会产生脏数据，等写操作完成后，读操作才能读到最后修改的正确数据。
+普通的读写锁，如果写锁没有释放，那么是读取不到map中的值的。原因是写操作是**原子性**的，但读操作并不会产生脏数据，等写操作完成后，读操作才能读到最后修改的正确数据。
 
 
 	ExecutorService executor = Executors.newFixedThreadPool(2);
